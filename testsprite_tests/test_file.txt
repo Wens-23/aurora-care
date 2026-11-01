@@ -1,0 +1,1 @@
+This is a sample text file to test the unsupported file type validation in the skin check upload feature.

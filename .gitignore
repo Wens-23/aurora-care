@@ -1,0 +1,26 @@
+
+# Dependencies
+node_modules/
+
+# Next.js build files
+.next/
+out/
+.vercel/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Database files
+data/db.json
+
+# InsForge configuration
+.insforge/
+
+# TestSprite temporary files
+testsprite_tests/tmp/
+testsprite_tests/tmp/config.json
+
+# Debug logs
+npm-debug.log*

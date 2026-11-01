@@ -1,0 +1,554 @@
+[
+  {
+    "id": "TC001",
+    "title": "User logs in and reaches the dashboard",
+    "description": "This verifies that a user can sign in with valid credentials and land on the protected dashboard.",
+    "category": "User Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user lands on the dashboard"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify protected account content is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Access the admin dashboard after logging in",
+    "description": "This test verifies that an administrator can log in and reach the admin dashboard successfully.",
+    "category": "Admin Provider Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /admin/login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin credentials field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the admin login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the admin dashboard is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Logged-in user runs a skin check and sees guidance",
+    "description": "This verifies that an authenticated user can upload a supported skin image, run analysis, and view the classification and guidance results.",
+    "category": "Skin Check",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the skin check page"
+      },
+      {
+        "type": "action",
+        "description": "Upload a supported skin image"
+      },
+      {
+        "type": "action",
+        "description": "Start the analysis"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a classification result is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify guidance is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Anonymous visitor explores doctors and opens a provider profile",
+    "description": "This verifies that an anonymous visitor can browse doctors and review an individual doctor's specialization, availability, and booking information.",
+    "category": "Browse Providers",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /doctors"
+      },
+      {
+        "type": "action",
+        "description": "Review the list of available doctors"
+      },
+      {
+        "type": "action",
+        "description": "Open a doctor's details"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify doctor specialization information is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify doctor availability and booking information are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Add a new provider to the managed list",
+    "description": "This test verifies that an administrator can create a new provider and see it appear in the managed list.",
+    "category": "Admin Provider Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /admin/login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin credentials field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the admin login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the provider creation form"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the provider name field with Dr. Maya Sen"
+      },
+      {
+        "type": "action",
+        "description": "Select a doctor role"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the specialization field with dermatology"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the phone number field with 5551234567"
+      },
+      {
+        "type": "action",
+        "description": "Select an availability option"
+      },
+      {
+        "type": "action",
+        "description": "Submit the provider form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new provider appears in the managed list"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Remove an existing provider from the available list",
+    "description": "This test verifies that an administrator can delete a provider and no longer see that provider in the available list.",
+    "category": "Admin Provider Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /admin/login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin credentials field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the admin login form"
+      },
+      {
+        "type": "action",
+        "description": "Create a provider for removal"
+      },
+      {
+        "type": "action",
+        "description": "Open the actions for the newly created provider"
+      },
+      {
+        "type": "action",
+        "description": "Remove the provider from the managed list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the provider no longer appears in the available list"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Doctor list remains usable for browsing",
+    "description": "This verifies that the doctors page shows an available provider list for browsing before booking decisions are made.",
+    "category": "Browse Providers",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /doctors"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify available doctors are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Caretaker list remains usable for browsing",
+    "description": "This verifies that the caretakers page shows an available provider list for browsing before booking decisions are made.",
+    "category": "Browse Providers",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /caretakers"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify available caretakers and therapists are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Skin check can recommend consulting a doctor",
+    "description": "This verifies that a skin analysis can surface guidance that directs the user to consult a doctor when the result is serious or uncertain.",
+    "category": "Skin Check",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the skin check page"
+      },
+      {
+        "type": "action",
+        "description": "Upload a supported skin image"
+      },
+      {
+        "type": "action",
+        "description": "Start the analysis"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify doctor consultation guidance is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC010",
+    "title": "Logged-in user can view stored profile details",
+    "description": "This verifies that an authenticated user can open the profile page and see their stored account information.",
+    "category": "User Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the profile page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify stored user details are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC011",
+    "title": "Keep provider data visible after adding and returning to the list",
+    "description": "This test verifies that a newly added provider remains visible when the administrator returns to the managed list.",
+    "category": "Admin Provider Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /admin/login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin credentials field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the admin login form"
+      },
+      {
+        "type": "action",
+        "description": "Add a new service provider"
+      },
+      {
+        "type": "action",
+        "description": "Return to the managed provider list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the newly added provider is still visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC012",
+    "title": "Keep the admin session active on the dashboard",
+    "description": "This test verifies that an administrator who is already logged in can stay on and use the admin dashboard without being sent back to login.",
+    "category": "Admin Provider Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /admin/login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin credentials field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the admin login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the admin dashboard navigation"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the admin dashboard remains accessible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC013",
+    "title": "Authenticated session persists across protected pages",
+    "description": "This verifies that after logging in, the user can move between protected areas without losing access to the session.",
+    "category": "User Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the profile page"
+      },
+      {
+        "type": "action",
+        "description": "Open the dashboard"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the protected pages remain accessible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user session is still active"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC014",
+    "title": "User sees validation after invalid login",
+    "description": "This verifies that entering invalid credentials shows login validation feedback instead of signing the user in.",
+    "category": "User Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with invalid@example.com"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with wrong-password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify login validation feedback is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC015",
+    "title": "See validation after entering invalid admin credentials",
+    "description": "This test verifies that an administrator sees validation feedback when invalid login credentials are submitted.",
+    "category": "Admin Provider Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /admin/login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin credentials field with invalid-admin-user"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with invalid-password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the admin login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify admin login validation feedback is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC016",
+    "title": "Skin check rejects an unsupported file type",
+    "description": "This verifies that uploading an unsupported file type shows validation feedback and does not proceed with analysis.",
+    "category": "Skin Check",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the skin check page"
+      },
+      {
+        "type": "action",
+        "description": "Upload an unsupported file type"
+      },
+      {
+        "type": "action",
+        "description": "Start the analysis"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify file type validation feedback is visible"
+      }
+    ],
+    "priority": "Low"
+  }
+]

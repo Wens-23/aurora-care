@@ -1,0 +1,16 @@
+ALTER TABLE public.users ADD COLUMN IF NOT EXISTS "dob" TEXT;
+ALTER TABLE public.users ADD COLUMN IF NOT EXISTS "gender" TEXT;
+ALTER TABLE public.users ADD COLUMN IF NOT EXISTS "bloodGroup" TEXT;
+ALTER TABLE public.users ADD COLUMN IF NOT EXISTS "bloodPressure" TEXT DEFAULT '120/80';
+ALTER TABLE public.users ADD COLUMN IF NOT EXISTS "weight" TEXT DEFAULT '145 lbs';
+ALTER TABLE public.users ADD COLUMN IF NOT EXISTS "height" TEXT;
+ALTER TABLE public.users ADD COLUMN IF NOT EXISTS "allergies" TEXT;
+ALTER TABLE public.users ADD COLUMN IF NOT EXISTS "medicalHistory" TEXT;
+ALTER TABLE public.users ADD COLUMN IF NOT EXISTS "currentMedications" TEXT;
+ALTER TABLE public.users ADD COLUMN IF NOT EXISTS "emergencyContactName" TEXT;
+ALTER TABLE public.users ADD COLUMN IF NOT EXISTS "emergencyContactRelation" TEXT;
+ALTER TABLE public.users ADD COLUMN IF NOT EXISTS "emergencyContactPhone" TEXT;
+ALTER TABLE public.users ADD COLUMN IF NOT EXISTS "address" TEXT;
+ALTER TABLE public.users ADD COLUMN IF NOT EXISTS "city" TEXT;
+ALTER TABLE public.users ADD COLUMN IF NOT EXISTS "state" TEXT;
+ALTER TABLE public.users ADD COLUMN IF NOT EXISTS "zipCode" TEXT;
